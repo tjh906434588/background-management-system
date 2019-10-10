@@ -1,6 +1,6 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-import { loginRouter } from './routers'
+import { loginRouter, otherRouter } from './routers'
 
 Vue.use(Router)
 
@@ -10,10 +10,7 @@ let initRouter = {
 }
 
 let router = new Router({
-  routes: [
-    initRouter,
-    loginRouter
-  ]
+  routes: [initRouter, loginRouter, otherRouter]
 })
 
 export default router

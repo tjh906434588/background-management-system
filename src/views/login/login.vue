@@ -16,10 +16,9 @@
                     v-model="ruleForm.account"
                     placeholder="用户名"></el-input>
         </el-form-item>
-        <el-form-item prop='pass'
+        <el-form-item prop='pass' @keyup.13.native="submitForm('ruleForm')"
                       label="密码：">
           <el-input type="password"
-                    prop="pass"
                     v-model="ruleForm.pass"
                     placeholder="密码"></el-input>
         </el-form-item>
@@ -37,7 +36,7 @@
 </template>
 
 <script>
-
+// import login from '@/api/request'
 export default {
   name: 'login',
   data () {
@@ -62,7 +61,27 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          if (this.ruleForm.account === 'admin' && this.ruleForm.pass === 'admin') {
+            this.$router.push({ name: 'home-index' })
+          } else {
+            this.$notify.error({
+              title: '登录错误',
+              message: '账号密码错误'
+            })
+          }
+
+          // login({
+          //   phone: this.ruleForm.account,
+          //   password: this.ruleForm.pass
+          // }).then(data => {
+          //   if (data !== 'isError') {
+          //     // 将获取到的token存入本地储存
+          //     window.sessionStorage.setItem('token', data)
+
+          //     this.$router.push({ name: 'home-index' })
+          //   } else {
+          //   }
+          // })
         } else {
           return false
         }
@@ -100,7 +119,7 @@ export default {
       background-color: white;
       border-radius: 0.1rem;
       padding: 0.03rem;
-      .adjustment{
+      .adjustment {
         margin-top: 0.2rem;
       }
       .el-input {
