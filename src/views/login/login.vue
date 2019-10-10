@@ -16,7 +16,8 @@
                     v-model="ruleForm.account"
                     placeholder="用户名"></el-input>
         </el-form-item>
-        <el-form-item prop='pass' @keyup.13.native="submitForm('ruleForm')"
+        <el-form-item prop='pass'
+                      @keyup.13.native="submitForm('ruleForm')"
                       label="密码：">
           <el-input type="password"
                     v-model="ruleForm.pass"
@@ -63,6 +64,11 @@ export default {
         if (valid) {
           if (this.ruleForm.account === 'admin' && this.ruleForm.pass === 'admin') {
             this.$router.push({ name: 'home-index' })
+            this.$notify({
+              title: '登录成功',
+              message: '',
+              type: 'success'
+            })
           } else {
             this.$notify.error({
               title: '登录错误',
