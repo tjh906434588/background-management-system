@@ -18,7 +18,7 @@
         </template>
         <el-menu-item index="/home/user-list">用户列表</el-menu-item>
         <el-menu-item index="/home/business-list">商家列表</el-menu-item>
-        <el-menu-item index="2-3">食品列表</el-menu-item>
+        <el-menu-item index="/home/food-list">食品列表</el-menu-item>
         <el-menu-item index="2-4">订单列表</el-menu-item>
         <el-menu-item index="2-5">管理员列表</el-menu-item>
       </el-submenu>
@@ -28,7 +28,7 @@
           <span>添加数据</span>
         </template>
         <el-menu-item index="3-1">添加商铺</el-menu-item>
-        <el-menu-item index="3-2">添加商品</el-menu-item>
+        <el-menu-item index="/home/add-food">添加商品</el-menu-item>
       </el-submenu>
       <el-submenu index="4">
         <template slot="title">
@@ -82,6 +82,8 @@ export default {
       }
       this.$router.beforeEach((to, from, next) => {
         if (to.path === '/home/home-index') {
+          this.judge = '/home/home-index'
+        } else if (to.path === '/home/add-food') {
           this.judge = '/home/home-index'
         }
         next()

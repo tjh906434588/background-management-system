@@ -38,6 +38,20 @@ export const otherRouter = {
         require([
           '@/views/business-list/business-list.vue'
         ], resolve)
+    },
+    {
+      path: 'add-food',
+      name: 'add-food',
+      meta: ['添加数据', '添加商品'],
+      component: resolve =>
+        require(['@/views/add-food/add-food.vue'], resolve)
+    },
+    {
+      path: 'food-list',
+      name: 'food-list',
+      meta: ['添加数据', '添加商品'],
+      component: resolve =>
+        require(['@/views/food-list/food-list.vue'], resolve)
     }
   ]
 }

@@ -73,40 +73,40 @@ export default {
   }
   .main-single {
     min-height: calc(~"100% - 60px");
-    margin-bottom: 60px;
-    padding: 0 20px 40px;
+    margin-bottom: 0.6rem;
+    padding: 0 0.2rem 0.4rem;
   }
   .copy {
-    margin-top: -60px;
+    margin-top: -0.6rem;
     width: 100%;
   }
   &-logo {
     position: absolute;
-    top: 15px;
-    left: 20px;
-    width: 186px;
+    top: 0.15rem;
+    left: 0.2rem;
+    width: 1.86rem;
   }
   .nav-wrapper {
     position: absolute;
-    left: 268px;
+    left: 2.68rem;
     top: 0;
-    padding-top: 14px;
-    height: 80px;
+    padding-top: 0.14rem;
+    height: 0.8rem;
   }
   .nav-item {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    width: 117px;
+    width: 1.17rem;
     font-size: 0;
     cursor: pointer;
   }
   .nav-icon {
-    margin-bottom: 8px;
-    width: 30px;
+    margin-bottom: 0.08rem;
+    width: 0.3rem;
   }
   .nav-name {
-    font-size: 14px;
+    font-size: 0.14rem;
     color: #999;
     &.active {
       color: #33cc9a;
@@ -115,14 +115,17 @@ export default {
   .pos-right {
     position: absolute;
     right: 0;
-    top: 14px;
+    top: 0.14rem;
+  }
+  .main-page {
+    width: calc(100% - 3.2rem);
   }
 }
 .change-menu {
   position: absolute;
-  width: 60px;
-  right: 20px;
-  bottom: -20px;
+  width: 0.6rem;
+  right: 0.2rem;
+  bottom: -0.2rem;
   cursor: pointer;
 }
 </style>
